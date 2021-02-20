@@ -737,12 +737,16 @@ tract_demo %>%
          parameter == "Percent",
          year == 2019) %>% 
   left_join(., msa.sf, by = "GEOID") %>% st_as_sf() %>%
-  filter(in_pdx == T,
-         rel != "3. Not reliable") %>%
-  mapview(., zcol = "est", at = seq(0, .4, 0.05))
+  mapview(., zcol = "est", at = seq(0, .45, 0.05))
 
 
 
-
-
+tract_demo %>%
+  filter(variable == "Median Household Income" ,
+         parameter == "Total",
+         subgroup == "All",
+         year == 2010) %>%
+  left_join(., msa.sf, by = "GEOID") %>% st_as_sf() %>%
+  mapview(., zcol = "est", at = seq(0, 140000, 20000))
+levels(as.factor(tract_demo$variable))
 
