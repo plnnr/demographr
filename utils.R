@@ -3,13 +3,13 @@ library(tidycensus)
 library(sf)
 
 ##### Data and resources #####
-# msa.sf <- readRDS("data/msa.sf_20210218.rds") %>% st_transform("+proj=longlat +datum=WGS84")
-# demographic_data_long <- readRDS("demographic_data_long_20201210.rds") %>%
-#   mutate(GEOID_selected = paste0(GEOID, "_selectedLayer"))
-
-msa.sf <- readRDS("data/pima_msa.sf_20210218.rds") %>% st_transform("+proj=longlat +datum=WGS84")
-demographic_data_long <- readRDS("data/pima_tract_demographic_data_2010t2019_20210218.rds") %>%
+msa.sf <- readRDS("data/msa.sf_20210218.rds") %>% st_transform("+proj=longlat +datum=WGS84")
+demographic_data_long <- readRDS("data/demographic_data_long_20201210.rds") %>%
   mutate(GEOID_selected = paste0(GEOID, "_selectedLayer"))
+
+# msa.sf <- readRDS("data/pima_msa.sf_20210218.rds") %>% st_transform("+proj=longlat +datum=WGS84")
+# demographic_data_long <- readRDS("data/pima_tract_demographic_data_2010t2019_20210218.rds") %>%
+#   mutate(GEOID_selected = paste0(GEOID, "_selectedLayer"))
 
 
 ##### Functions #####
